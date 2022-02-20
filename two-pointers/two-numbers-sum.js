@@ -15,7 +15,7 @@
 //   }
 
 // More efficient time solution: Implement two pointers. First sort the array.
-// Have pointers at index first and last index and then sum them
+// Have pointers at index first and last index and then iterate the array while adding both values
 // We are still not storing anything so the space complexity is still O(1)
 
 function twoNumberSum(array, targetSum) {
@@ -26,14 +26,20 @@ function twoNumberSum(array, targetSum) {
   // Then declare the pointers to the left and right
   let left = 0;
   let right = array.length - 1;
-  // Nown iterate the array
+  // Now iterate the array
   while (left < right) {
-    const sum = array[left] + array[right];
-    if (sum === targetSum) {
+    // Variable that hold the sum of the two pointers
+    const currentSum = array[left] + array[right];
+    // Conditional to check if the sum matches the target sum
+    if (currentSum === targetSum) {
       return [array[left], array[right]];
-    } else if (currentSum < targetSum) {
+    }
+    // If currentSum is less than sum, move the left pointer to the right
+    else if (currentSum < targetSum) {
       left++;
-    } else if (currentSum > targetSum) {
+    }
+    // If currentSum is less than sum, move the left pointer to the left
+    else if (currentSum > targetSum) {
       right--;
     }
   }
