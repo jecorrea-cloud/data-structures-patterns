@@ -1,6 +1,8 @@
 // Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 
 // Brute force approach: Generate all the squares and then sort the output array
+// Because we are sorting, time complexity is O(nlogn).
+// Space complexity is O(n), where n is the length of the array given we are storing and returning another array with that length
 
 // O(nlogn) time | O(n) space
 function sortedSquaredArray(array) {
