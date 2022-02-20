@@ -50,7 +50,10 @@ function isPalindrome(string) {
   while (leftIdx < rightIdx) {
     // Base case if they are false
     if (string[leftIdx] !== string[rightIdx]) return false;
-    // Otherwise
+    // Otherwise move the indexes to the right and to the left one space
+    // and compare again until the condition for the iteration is no longer true.
+    leftIdx++;
+    rightIdx--;
   }
   return true;
 }
