@@ -31,7 +31,7 @@ function twoNumberSum(array, targetSum) {
 
   // First sort the array
   array.sort((a, b) => a - b);
-  // Then declare the pointers to the left and right
+  // Then declare the pointers to the left and right of the array
   let left = 0;
   let right = array.length - 1;
   // Now iterate the array
