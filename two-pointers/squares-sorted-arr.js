@@ -4,7 +4,7 @@
 // Because we are sorting, time complexity is O(nlogn).
 // Space complexity is O(n), where n is the length of the array given we are storing and returning another array with that length
 
-// O(nlogn) time | O(n) space
+// O(nlogn) time | O(n) space - where n is the length of the input array
 function sortedSquaredArray(array) {
   // Create a new array for the solution to avoid messing up the input one
   const sortedSquares = new Array(array.length).fill(0);
@@ -18,3 +18,7 @@ function sortedSquaredArray(array) {
   sortedSquares.sort((a, b) => a - b);
   return sortedSquares;
 }
+
+// Two pointers approach: We're going to build the array from the right to the left
+
+// O(n) time | O(n) space - where n is the length of the input array

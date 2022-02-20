@@ -22,6 +22,8 @@
 
 // More efficient time solution: Implement two pointers. First sort the array.
 // Have pointers at index first and last index and then iterate the array while adding both values
+// If the sum matches the target sum, immediatly return those two values.
+// If it does not, then shift one of the pointers either to the right or the left. It will depend whether the sum is greater or less than the target sum
 // We are still not storing anything so the space complexity is still O(1)
 
 function twoNumberSum(array, targetSum) {
