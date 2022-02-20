@@ -1,3 +1,9 @@
+// Given an array of integers nums and an integer target, return the two numbers such that they add up to target.
+
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+// You can return the answer in any order.
+
 // Brute force solution: Implements two for loops and look for the solutions.
 // This is not time efficient because it will traverse the array twice.
 // This is space efficient because it does not need to save anything in memory
