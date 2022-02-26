@@ -39,3 +39,5 @@ function firstDuplicateArray(array) {
 }
 
 // Two pointers approach:
+
+function firstDuplicate(array) {}
