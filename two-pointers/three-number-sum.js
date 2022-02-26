@@ -7,9 +7,10 @@
 //
 
 function threeNumberSum(array, targetSum) {
+  // O(n^2) time | O(n) space
   array.sort((a, b) => a - b);
   const triplets = [];
-
+  // Now implement the pointers in an array at the position of the second and the last index
   for (let index = 0; index < array.length - 2; index++) {
     let left = index + 1;
     let right = array.length - 1;
