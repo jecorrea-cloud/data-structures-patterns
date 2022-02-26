@@ -5,8 +5,12 @@
 // You must solve the problem without modifying the array nums and uses only constant extra space.
 
 // Brute force approach: Use two nested for loops to find the repeated value.
-// The outer loop picks each element in the array one by one while the inner loop is used
-// To compare the with the current value that we are on.
+// Set a variable that holds the length of the input array.
+// Use an outer loop to pick each element in the array one by one while the inner loop is used
+// To compare the current value that we are on.
+// If two values match, set the value of the variable to the index of one of the repeated values.
+// Once the array has been traversed either return null if the variable is still the same
+// Or return the value of the array at index of the variable
 // Time complexity is O(n^2) because the array is being iterated twice.
 // Nothing is save into memory and therefore the space complexity is O(1).
 
@@ -28,7 +32,7 @@ function firstDuplicateArray(array) {
         minimumSecondIndex = Math.min(minimumSecondIndex, j);
     }
   }
-  // Exit the loops. If the value of minimumSecondIndex is still the same, return -1 (void)
+  // Exit the loops. If the value of minimumSecondIndex is still the same, return -1 (null)
   if (minimumSecondIndex === array.length) return -1;
   // Otherwise return the number at the index of minimumSecondIndex
   return array[minimumSecondIndex];
