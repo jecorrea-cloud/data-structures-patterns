@@ -46,7 +46,7 @@ function twoNumberSum(array, targetSum) {
     else if (currentSum < targetSum) {
       left++;
     }
-    // If currentSum is less than sum, move the left pointer to the left
+    // If currentSum is less than sum, move the right pointer to the left
     else if (currentSum > targetSum) {
       right--;
     }
