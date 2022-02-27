@@ -4,5 +4,24 @@
 
 // You must solve this problem without using the library's sort function.
 
-// Two pointers approach
-function sortColors(array) {}
+// Two pointers approach: Set a pointer at the beginning and at the end of the nums array
+// Iterate
+// The space complexity is constant due to the array being altered while not storing anything in memory
+function sortColors(nums) {
+  // O(n) time | O(1) space
+  // Set the two pointers
+  let start = 0;
+  let end = nums.length - 1;
+
+  for (let index = 0; index < end; index++) {
+    if (nums[index] === 0) {
+      [nums[index], nums[start]] = [nums[start], nums[index]];
+      start++;
+    } else if (nums[index] === 2) {
+      [nums[index], nums[end]] = [nums[end], nums[index]];
+      end--;
+    }
+  }
+
+  return nums;
+}
