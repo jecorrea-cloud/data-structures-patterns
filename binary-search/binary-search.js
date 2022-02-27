@@ -15,7 +15,7 @@
 // If the value is less than it,  we 'split' the array and take the values from the right of the
 // middle pointer while moving the left pointer one space from the middle index, and repeat the process.
 // Because we are eliminating half the values to operate the array every iteration, time complexity will be
-// O(log(n)).
+// O(log(n)). Space complexity will also be O(log(n)) because of the frames of the call stack that will be used up
 //
 // O(log(n)) time | O(log(n)) space - where n is the length of the input array
 function binarySearch(array, target) {
@@ -43,13 +43,13 @@ function binarySearchHelper(array, target, left, right) {
   }
 }
 
-// Iteratively approach: Unlike the previous approach, an iterator is being implemented.
+// Iterative approach: Unlike the previous approach, an iterator is being implemented.
 // The process will remain the same: We first iterate the array and declare two pointers at the beginning
 // & end of the input array.
 // Next, calculate the middle index and its value. From there we split the array either to the left or right by
 // Just changing the values of the right or left pointers
 // Time complexity will remain to be O(log(n)), whereas space complexity will be constant, given we are not
-// Saving any additional values in memory.
+// Saving anything in memory.
 // O(log(n)) time | O(1) space - where n is the size of the input array
 function binarySearch(array, target) {
   return binarySearchHelper(array, target, 0, array.length - 1);
