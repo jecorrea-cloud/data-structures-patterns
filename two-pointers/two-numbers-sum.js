@@ -25,6 +25,7 @@
 // If the sum matches the target sum, immediatly return those two values.
 // If it does not, then shift one of the pointers either to the right or the left. It will depend whether the sum is greater or less than the target sum
 // We are still not storing anything so the space complexity is still O(1)
+// Because we are dealing with sorting, time complexity will be O(nlog(n))
 
 function twoNumberSum(array, targetSum) {
   // O(nlog(n)) time | O(1) space
