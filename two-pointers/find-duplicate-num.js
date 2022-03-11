@@ -4,4 +4,19 @@
 
 // You must solve the problem without modifying the array nums and uses only constant extra space.
 
-function findDuplicate(nums) {}
+function findDuplicate(nums) {
+  let slow = (fast = nums[0]);
+
+  while (true) {
+    slow = nums[slow];
+    fast = nums[nums[fast]];
+    if (slow === fast) {
+      slow = nums[0];
+      while (slow !== fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+      }
+      return slow;
+    }
+  }
+}
