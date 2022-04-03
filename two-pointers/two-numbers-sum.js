@@ -4,7 +4,7 @@
 
 // You can return the answer in any order.
 
-// Brute force solution: Implements two for loops and look for the solutions.
+// Brute force approach: Implements two for loops and look for the solutions.
 // This is not time efficient because it will traverse the array twice.
 // This is space efficient because it does not need to save anything in memory
 
@@ -20,7 +20,7 @@
 //     return [];
 //   }
 
-// More efficient time solution: Implement two pointers. First sort the array.
+// Two-pointers approach: Implement two pointers. First sort the array.
 // Have pointers at index first and last index and then iterate the array while adding both values
 // If the sum matches the target sum, immediatly return those two values.
 // If it does not, then shift one of the pointers either to the right or the left. It will depend whether the sum is greater or less than the target sum
