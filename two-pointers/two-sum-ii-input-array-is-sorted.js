@@ -29,3 +29,36 @@
 // numbers is sorted in non-decreasing order.
 // -1000 <= target <= 1000
 // The tests are generated such that there is exactly one solution.
+
+// Two-pointers approach: Implement two pointers. First have pointers at index first and last index,
+// then iterate the array while adding both values.
+// If the sum matches the target sum, immediatly return those two values.
+// If it does not, then shift one of the pointers either to the right or the left. It will depend whether the sum is greater or less than the target sum
+// We are not storing anything so the space complexity is linear (O(1)).
+// Because the array is sorted beforehand, time complexity will be O(n), where n is the length of the array.
+
+function twoSum(numbers, target) {
+  // O(n) time - where n is the length of the array | O(1) space
+  // First declare the pointers to the left and right of the array
+  let left = 0;
+  let right = numbers.length - 1;
+  // Now iterate the array
+  while (left < right) {
+    // Variable that hold the sum of the two pointers
+    const currentSum = numbers[left] + numbers[right];
+    // Conditional to check if the sum matches the target sum
+    if (currentSum === target) {
+      return [left + 1, right + 1];
+    }
+    // If currentSum is less than target, move the left pointer one space to the right
+    else if (currentSum < targetSum) {
+      left++;
+    }
+    // If currentSum is less than target, move the right pointer one space to the left
+    else if (currentSum > targetSum) {
+      right--;
+    }
+  }
+  // Base case if there are no two numbers that meet the condition
+  return [];
+}
