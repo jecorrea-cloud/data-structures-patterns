@@ -19,3 +19,9 @@
 
 // 0 <= nums.length <= 3000
 // -105 <= nums[i] <= 105
+
+// Two Pointers Approach: We firstly assume the array is unorganized and begin by sorting it
+// We then proceed to declare two pointers for the second and last item in the array
+// Because we are iterating the array twice, the time complexity is O(n^2)
+// We are saving an array in memory to return, so at worst case space complexity will be O(n)
+// Because there is a chance the returning array contains the same amount
