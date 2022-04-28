@@ -33,4 +33,24 @@
 //   return res;
 // }
 
-// Two pointers approach:
+// Two pointers approach: It runs in linear time O(n)
+function maxArea(height) {
+  let res = 0;
+  let l = 0;
+  let r = height.length - 1;
+
+  while (l < r) {
+    area = (r - l) * Math.min(height[l], height[r]);
+    res = Math.max(res, area);
+
+    if (height[l] < height[r]) {
+      l++;
+    } else if (height[l] > height[r]) {
+      r--;
+    } else {
+      r--;
+    }
+  }
+
+  return res;
+}
