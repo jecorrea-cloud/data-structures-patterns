@@ -20,4 +20,17 @@
 // 2 <= n <= 105
 // 0 <= height[i] <= 104
 
-function maxArea(height) {}
+// Brute force approach: Use two nested loops to compare every value. Time complexity will be O(n^2), where n is the length of the array.
+
+// function maxArea(height) {
+//   let res = 0;
+//   for (let l = 0; index < height.length; l++) {
+//     for (let r = l + 1; index < array.length; r++) {
+//       area = (r - l) * Math.min(height[l], height[r]);
+//       res = Math.max(res, area);
+//     }
+//   }
+//   return res;
+// }
+
+// Two pointers approach:
