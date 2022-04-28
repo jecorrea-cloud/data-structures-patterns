@@ -16,4 +16,27 @@
 // 1 <= n <= 2 * 104
 // 0 <= height[i] <= 105
 
-function trap(height) {}
+// Two pointers approach
+
+function trap(height) {
+  if (!height) return 0;
+  let res = 0;
+  let l = 0;
+  let r = height.length - 1;
+  let maxLeft = height[l];
+  let maxRight = height[r];
+
+  while (l < r) {
+    if (maxLeft < maxRight) {
+      l++;
+      maxLeft = Math.max(maxLeft, height[l]);
+      res += maxLeft - height[l];
+    } else {
+      r--;
+      maxRight = Math.max(maxRight);
+      res += maxRight - height[r];
+    }
+  }
+
+  return res;
+}
