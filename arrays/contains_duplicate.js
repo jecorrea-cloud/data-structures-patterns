@@ -18,21 +18,19 @@
 // 1 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 
-// Brute force approach:
+// Brute force approach: Use two nested loops to compare each value with the other ones in the array
 
 function containsDuplicate(array) {
-  let minimumSecondIndex = array.length;
+  // O(n^2) time | O(1) space
   for (let i = 0; i < array.length; i++) {
     const value = array[i];
     for (let j = 0; j < array.length; j++) {
       const valueToCompare = array[j];
       if (value === valueToCompare) {
-        minimumSecondIndex = Math.min(minimumSecondIndex, j);
+        return true;
       }
     }
   }
 
-  if (minimumSecondIndex === array.length) return -1;
-
-  return array[minimumSecondIndex];
+  return false;
 }
