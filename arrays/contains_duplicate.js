@@ -46,9 +46,11 @@ function containsDuplicate(nums) {
   // O(n) time - where n is the length of the array | O(n) space - where n is the length of the array
   // Declare the new hashset
   const mySet = new Set();
-  // Iterate the input array while comparing values
+  // Iterate the input array
   for (const value of nums) {
+    // Compare the current value from the array with the ones in the hashset
     if (mySet.has(value)) return true;
+    // If the condition was not met, the add that value to the hashet
     mySet.add(value);
   }
   // Exit the loop and return false if no duplicate was found
