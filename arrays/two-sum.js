@@ -56,13 +56,13 @@ function twoSum(nums, target) {
   // Declare the table
   const table = {};
   // Iterate the input array
-  for (const num of nums) {
+  for (const [i, num] of nums.entries) {
     // Set the missing returning value equal to the substraction b/w the input target and the current
     // value in the array
     potentialMatch = target - num;
     // Check if the missing value is already in the hashtable
     if (potentialMatch in table) {
-      return [nums.indexOf(potentialMatch), nums.indexOf(num)];
+      return [nums.indexOf(potentialMatch), i];
     }
     // Otherwise add the array's current value to the hash table as a key paired with a value of true
     else {
