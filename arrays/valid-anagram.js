@@ -18,4 +18,24 @@
 
 // Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 
-function isAnagram(s, t) {}
+// Brute force approach: Iterate it
+function isAnagram(s, t) {
+  s = s
+    .replace(/[^A-Za-z0-9]/g, "")
+    .split("")
+    .sort()
+    .join("");
+  t = t
+    .replace(/[^A-Za-z0-9]/g, "")
+    .split("")
+    .sort()
+    .join("");
+  for (let index = 0; index < s.length; index++) {
+    const firstValue = s[index];
+    const valueToCompare = t[index];
+    if (firstValue !== valueToCompare) {
+      return false;
+    }
+  }
+  return true;
+}
