@@ -26,3 +26,20 @@
 // Only one valid answer exists.
 
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+
+// Brute force approach: We implement two neested loops and loop through the array for each existing index
+// until we come accross the answer.
+// This is not time efficient because it will traverse the array twice at worst.
+// This is space efficient because it does not need to save anything in memory
+
+function twoSum(nums, target) {
+  // O(n^2) time | O(1) space
+  for (let i = 0; i < nums.length - 1; i++) {
+    const firstNum = nums[i];
+    for (let j = i + 1; j < nums.length; j++) {
+      const secondNum = nums[j];
+      if (firstNum + secondNum === target) return [firstNum, secondNum];
+    }
+  }
+  return [];
+}
