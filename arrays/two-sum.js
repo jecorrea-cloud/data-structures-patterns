@@ -32,14 +32,43 @@
 // This is not time efficient because it will traverse the array twice at worst.
 // This is space efficient because it does not need to save anything in memory
 
+// function twoSum(nums, target) {
+//   // O(n^2) time - where n is the length of the array | O(1) space
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     const firstNum = nums[i];
+//     for (let j = i + 1; j < nums.length; j++) {
+//       const secondNum = nums[j];
+//       if (firstNum + secondNum === target) return [nums[i], nums[j]];
+//     }
+//   }
+//   return [];
+// }
+
+// Hashtable approach: To avoid doing multiple runs in the array, we implement a hash table to which we will be
+// adding each value present in the array as we iterate the array. To make sure we are getting the correct values,
+// we will set our missing value to the substraction between the input target number and the current value we are in.
+// If this missing value is present in the hash table, we will immediatly return its index along with the current value index.
+// If nothing is found after the iteration then we return an empty array.
+// This approach runs in linear time given the array is being traversed only once.
+
 function twoSum(nums, target) {
-  // O(n^2) time | O(1) space
-  for (let i = 0; i < nums.length - 1; i++) {
-    const firstNum = nums[i];
-    for (let j = i + 1; j < nums.length; j++) {
-      const secondNum = nums[j];
-      if (firstNum + secondNum === target) return [firstNum, secondNum];
+  // O(n) time | O(n) space - where n is the length of the array
+  // Declare the table
+  const table = {};
+  // Iterate the input array
+  for (const num of nums) {
+    // Set the missing returning value equal to the substraction b/w the input target and the current
+    // value in the array
+    potentialMatch = target - num;
+    // Check if the missing value is already in the hashtable
+    if (potentialMatch in table) {
+      return [nums.indexOf(potentialMatch), nums.indexOf(num)];
+    }
+    // Otherwise add the array's current value to the hash table as a key paired with a value of true
+    else {
+      table[num] = true;
     }
   }
+  // Base case: return empty if nothing was found
   return [];
 }
