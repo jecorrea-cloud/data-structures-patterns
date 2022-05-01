@@ -18,24 +18,14 @@
 
 // Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 
-// Brute force approach: Iterate it
+// Brute force approach: Assuming the input strings are all lowercase, we can use the `.split("")` built in method to convert each input string
+// into an array, then sort them alphabetically using `.sort()`, turn them into string again using `.join()` and then return the comparison
+// whether or not both strings are equal.
+// Time complexity will be O(nlogn) due to the use of sorting.
+// Space complexity will be O(1) given nothing is being saved into memory.
 function isAnagram(s, t) {
-  s = s
-    .replace(/[^A-Za-z0-9]/g, "")
-    .split("")
-    .sort()
-    .join("");
-  t = t
-    .replace(/[^A-Za-z0-9]/g, "")
-    .split("")
-    .sort()
-    .join("");
-  for (let index = 0; index < s.length; index++) {
-    const firstValue = s[index];
-    const valueToCompare = t[index];
-    if (firstValue !== valueToCompare) {
-      return false;
-    }
-  }
-  return true;
+  // O(nlogn) time - where n is the length of the string | O(1) space
+  s = s.split("").sort().join("");
+  t = t.split("").sort().join("");
+  return s === t;
 }
