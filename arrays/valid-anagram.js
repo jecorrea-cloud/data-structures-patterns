@@ -25,7 +25,5 @@
 // Space complexity will be O(1) given nothing is being saved into memory.
 function isAnagram(s, t) {
   // O(nlogn) time - where n is the length of the string | O(1) space
-  s = s.split("").sort().join("");
-  t = t.split("").sort().join("");
-  return s === t;
+  return s.split("").sort().join("") === t.split("").sort().join("");
 }
