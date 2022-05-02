@@ -21,4 +21,18 @@
 // 0 <= strs[i].length <= 100
 // strs[i] consists of lowercase English letters.
 
-function groupAnagrams(str) {}
+// Hash table approach:
+
+function groupAnagrams(str) {
+  const anagrams = {};
+  for (const s of str) {
+    const sortedStr = s.split("").sort().join("");
+    if (sortedStr in anagrams) {
+      anagrams[sortedStr].push(str);
+    } else {
+      anagrams[sortedStr] = [str];
+    }
+  }
+
+  return Object.values(anagrams);
+}
