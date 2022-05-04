@@ -23,14 +23,14 @@
 
 // Hash table approach:
 
-function groupAnagrams(str) {
+function groupAnagrams(strs) {
   const anagrams = {};
-  for (const s of str) {
+  for (const s of strs) {
     const sortedStr = s.split("").sort().join("");
     if (sortedStr in anagrams) {
-      anagrams[sortedStr].push(str);
+      anagrams[sortedStr].push(s);
     } else {
-      anagrams[sortedStr] = [str];
+      anagrams[sortedStr] = [s];
     }
   }
 
