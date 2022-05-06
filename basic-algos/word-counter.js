@@ -21,4 +21,4 @@ if (require.main === module) {
   );
 }
 
-module.exports = reverseString;
+module.exports = wordCounter;
