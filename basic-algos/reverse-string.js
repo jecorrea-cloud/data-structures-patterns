@@ -31,7 +31,7 @@ if (require.main === module) {
 
   console.log("");
 
-  console.log("Expecting: 'secaps on' ");
+  console.log("Expecting: 'secaps on'");
   console.log("=>", reverseString("   no spaces   "));
 }
 
