@@ -1,15 +1,24 @@
 // Character counter
 
-function charCounter(str, ch) {
-  let n = 0;
-  for (let index = 0; index < str.length; index++) {
-    const letter = str[index];
-    if (letter === ch) {
-      n++;
-    }
-  }
+// function charCounter(str, ch) {
+//   let n = 0;
+//   for (let index = 0; index < str.length; index++) {
+//     const letter = str[index];
+//     if (letter === ch) {
+//       n++;
+//     }
+//   }
 
-  return n;
+//   return n;
+// }
+
+function charCounter(str, ch) {
+  const arrStr = [...str];
+  let count = 0;
+  arrStr.forEach((element) => {
+    if (element === ch) count++;
+  });
+  return count;
 }
 
 if (require.main === module) {
