@@ -22,8 +22,8 @@
 // }
 
 function charCounter(str, ch) {
-  const arrStr = [...str];
-  return arrStr.filter((c) => c === ch).length;
+  // const arrStr = [...str];
+  return [...str].filter((c) => c === ch).length;
 }
 
 if (require.main === module) {
