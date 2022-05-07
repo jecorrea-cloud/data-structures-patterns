@@ -33,6 +33,10 @@ if (require.main === module) {
 
   console.log("Expecting: 'secaps on'");
   console.log("=>", reverseString("   no spaces   "));
+
+  console.log("");
+  console.log("Expecting: 'elddim eht ni secapsetihw sekiy'");
+  console.log("=>", reverseString("yikes      whitespaces in the middle"));
 }
 
 module.exports = reverseString;
