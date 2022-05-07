@@ -1,7 +1,7 @@
 // Reverse a string
 
 function reverseString(str) {
-  str = str.trim();
+  str = str.replace(/\s+/g, " ").trim();
   newStr = "";
   for (let i = str.length - 1; i > -1; --i) {
     newStr += str[i];
