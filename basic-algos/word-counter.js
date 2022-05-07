@@ -1,6 +1,9 @@
 // Word counter
 
-function wordCounter(str) {}
+function wordCounter(str) {
+  str = str.trim();
+  return str.split(" ").length;
+}
 
 if (require.main === module) {
   // add your own tests in here
