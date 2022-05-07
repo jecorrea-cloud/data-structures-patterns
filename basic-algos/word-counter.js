@@ -1,7 +1,7 @@
 // Word counter
 
 function wordCounter(str) {
-  str = str.trim();
+  str = str.replace(/\s+/g, " ").trim();
   return str.split(" ").length;
 }
 
@@ -20,7 +20,14 @@ if (require.main === module) {
   console.log("Expecting: 8");
   console.log(
     "=>",
-    wordCounter("   yikes, there are many whitespaces in this case    ")
+    wordCounter("   woah, there are many whitespaces in this case    ")
+  );
+
+  console.log("");
+  console.log("Expecting: 6");
+  console.log(
+    "=>",
+    wordCounter("   yikes, now        whitespaces          in the middle    ")
   );
 }
 
