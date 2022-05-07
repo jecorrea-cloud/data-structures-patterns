@@ -12,13 +12,18 @@
 //   return n;
 // }
 
+// function charCounter(str, ch) {
+//   const arrStr = [...str];
+//   let count = 0;
+//   arrStr.forEach((element) => {
+//     if (element === ch) count++;
+//   });
+//   return count;
+// }
+
 function charCounter(str, ch) {
   const arrStr = [...str];
-  let count = 0;
-  arrStr.forEach((element) => {
-    if (element === ch) count++;
-  });
-  return count;
+  return arrStr.filter((c) => c === ch).length;
 }
 
 if (require.main === module) {
