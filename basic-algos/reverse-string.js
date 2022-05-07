@@ -1,5 +1,6 @@
 // Reverse a string
 
+// Imperative approach: cut off the whitespaces, then loop the string backwards while adding each character to a new empty string.
 function reverseString(str) {
   str = str.replace(/\s+/g, " ").trim();
   newStr = "";

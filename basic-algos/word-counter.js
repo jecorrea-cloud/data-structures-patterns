@@ -1,7 +1,9 @@
 // Word counter
 
 function wordCounter(str) {
+  // Cut off the whitespaces
   str = str.replace(/\s+/g, " ").trim();
+  // Use the split method to turn the string into array w/o whitespaces and return the length
   return str.split(" ").length;
 }
 

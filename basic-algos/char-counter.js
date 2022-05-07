@@ -1,5 +1,7 @@
 // Character counter
 
+// Imperative approach: Use loops!
+
 // function charCounter(str, ch) {
 //   let n = 0;
 //   for (let index = 0; index < str.length; index++) {
@@ -21,6 +23,7 @@
 //   return count;
 // }
 
+// Declarative approach: look for the characters of the string that match w the target char and count them
 function charCounter(str, ch) {
   // const arrStr = [...str];
   return [...str].filter((c) => c === ch).length;

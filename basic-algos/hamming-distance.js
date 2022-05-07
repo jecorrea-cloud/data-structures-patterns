@@ -1,5 +1,7 @@
 // Hamming distance
 
+// Imperative approach: Check if the lengths of the strings do not match. Then loop and use a counter to keep track of the non-matching characters.
+
 function hammingMeter(s, t) {
   // Base case
   if (s.length !== t.length) return -1;
