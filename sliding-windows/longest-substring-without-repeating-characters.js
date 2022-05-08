@@ -22,7 +22,20 @@
 // 0 <= s.length <= 5 * 10^4
 // s consists of English letters, digits, symbols and spaces.
 
-function lengthOfLongestSubstring(s) {}
+function lengthOfLongestSubstring(s) {
+  let left = 0;
+  let charSet = new Set();
+  let res = 0;
+  for (let right = 0; right < s.length; right++) {
+    while (charSet.has(s[right])) {
+      charSet.delete(s[left]);
+      left++;
+    }
+    charSet.add(s[right]);
+    res = Math.max(res, right - left + 1);
+  }
+  return res;
+}
 
 if (require.main === module) {
   // add your own tests in here
