@@ -19,6 +19,8 @@
 
 function checkInclusion(s1, s2) {
   if (s1.length > s2.length) return false;
+  let s1Count = new Array(26).fill(0);
+  let s2Count = new Array(26).fill(0);
 }
 
 if (require.main === module) {
