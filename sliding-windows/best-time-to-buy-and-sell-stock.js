@@ -21,7 +21,29 @@
 // 1 <= prices.length <= 10^5
 // 0 <= prices[i] <= 10^4
 
-function maxProfit(prices) {}
+// Sliding window approach: We first set two pointers to the indexes of the first two values in the input array and a returning profit variable to zero.
+// Then we make sure to check the value on the left (day we bought) is always less than the value on the right (day we sell).
+// If not we set the left to hold the value of the right, and move the right one space.
+// Otherwise check if the substraction of the values is greater than the returning maximum profit value and either set it to the new value or keep it.
+// We thhen keep repeating this until we reach the end of the array.
+// Time complexity will be linear because the array is being traversed only once.
+// Space complexity will be constant given nothing is being saved into memory.
+function maxProfit(prices) {
+  // O(n) time - where n is the length of the input array | O(1) space
+  let maxPro = 0;
+  let left = 0;
+  let right = 1;
+  while (right < prices.length) {
+    if (prices[left] < prices[right]) {
+      const profit = prices[right] - prices[left];
+      maxPro = Math.max(maxPro, profit);
+    } else {
+      left = right;
+    }
+    right++;
+  }
+  return maxPro;
+}
 
 if (require.main === module) {
   // add your own tests in here
