@@ -18,7 +18,7 @@
 // s1 and s2 consist of lowercase English letters.
 
 function checkInclusion(s1, s2) {
-  if (s1.length !== s2.length) return false;
+  if (s1.length > s2.length) return false;
 }
 
 if (require.main === module) {
