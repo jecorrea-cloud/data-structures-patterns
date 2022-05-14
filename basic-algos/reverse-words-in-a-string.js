@@ -29,7 +29,14 @@
 
 // Follow-up: If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
 
-function reverseWords(s) {}
+function reverseWords(s) {
+  let str = s.replace(/\s+/g, " ").trim();
+  let newStr = "";
+  for (let i = str.length - 1; i > -1; --i) {
+    newStr += str[i] + " ";
+  }
+  return newStr.trim();
+}
 
 if (require.main === module) {
   // add your own tests in here
