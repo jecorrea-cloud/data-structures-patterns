@@ -35,7 +35,7 @@ function threeSum(nums) {
   nums.sort((a, b) => a - b);
   const triplets = [];
 
-  for (let index = 0; index < num.length; index++) {
+  for (let index = 0; index < nums.length; index++) {
     let left = index + 1;
     let right = nums.length - 1;
     // Now iterate
@@ -45,7 +45,10 @@ function threeSum(nums) {
       // Conditional to check if the three numbers sum matches the target sum (zero)
       // If it does, push the triplets as an array to the returning array and move
       // the pointers one space to the right and left
-      if (sum === 0) {
+      if (
+        sum === 0 &&
+        !triplets.includes([nums[index], nums[left]], nums[right])
+      ) {
         triplets.push([nums[index], nums[left], nums[right]]);
         left++;
         right--;
