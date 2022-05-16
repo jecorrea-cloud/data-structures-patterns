@@ -25,12 +25,19 @@
 
 // Follow up: Can you solve it in O(n) time and O(1) space?
 
-function backSpaceCompare(s, t) {}
+function backSpaceCompare(s, t) {
+  while (s !== "" || t !== "") {
+    s = s.replaceAll(/[a-zA-Z]([#])/g, "$1").replaceAll(/[#]/g, "");
+    t = t.replaceAll(/[a-zA-Z]([#])/g, "$1").replaceAll(/[#]/g, "");
+  }
+
+  return s === t;
+}
 
 if (require.main === module) {
   // add your own tests in here
   console.log("Expecting: true");
-  console.log("=>", backSpaceCompare("ab#c", "ad#c"));
+  console.log(backSpaceCompare("ab#c", "ad#c"));
 
   console.log("");
 
@@ -41,15 +48,6 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", backSpaceCompare("a#c", "b"));
-
-  console.log("");
-  console.log("Expecting: 6");
-  console.log(
-    "=>",
-    backSpaceCompare(
-      "   yikes, now        whitespaces          in the middle    "
-    )
-  );
 }
 
-module.exports = wordCounter;
+module.exports = backSpaceCompare;
