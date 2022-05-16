@@ -25,11 +25,17 @@
 
 // Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
 
-function missingNumber(nums) {}
+function missingNumber(nums) {
+  let res = nums.length;
+  for (let index = 0; index < nums.length; index++) {
+    res += index - nums[index];
+  }
+  return res;
+}
 
 if (require.main === module) {
   // add your own tests in here
-  console.log("Expecting: 1");
+  console.log("Expecting: 2");
   console.log("=>", missingNumber([3, 0, 1]));
 
   console.log("");
