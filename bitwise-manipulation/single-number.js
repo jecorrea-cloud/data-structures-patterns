@@ -21,7 +21,19 @@
 // -3 * 10^4 <= nums[i] <= 3 * 10^4
 // Each element in the array appears twice except for one element which appears only once.
 
-function singleNumbers(nums) {}
+// Bitwise approach: Use the bitwise XOR operator. Anything that is compared.
+// Traverse the array once.
+// Time complexity will be linear given the array will be traversed only once.
+// Space complexity is constant because nothing is being saved into memory.
+
+function singleNumbers(nums) {
+  // O(n) time - where n is the length of the input array | O(1) space
+  let res = 0;
+  for (const value of nums) {
+    res = res ^ value;
+  }
+  return res;
+}
 
 if (require.main === module) {
   // add your own tests in here
