@@ -42,7 +42,7 @@ function singleNumber(nums) {
 if (require.main === module) {
   // add your own tests in here
   console.log("Expecting: 1");
-  console.log(singleNumber([2, 2, 1]));
+  console.log("=>", singleNumber([2, 2, 1]));
 
   console.log("");
 
