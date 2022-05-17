@@ -29,7 +29,14 @@
 // It is very easy to come up with a solution with a runtime of O(n log n). Can you do it in linear time O(n) and possibly in a single pass?
 // Can you do it without using any built-in function (i.e., like __builtin_popcount in C++)?
 
-function countBits(nums) {}
+function countBits(n) {
+  let bits = [];
+
+  for (let index = 0; index <= n; index++) {
+    bits.push(Number(index).toString(2).replace(/0/g, "").length);
+  }
+  return bits;
+}
 
 if (require.main === module) {
   // add your own tests in here
@@ -40,11 +47,6 @@ if (require.main === module) {
 
   console.log("Expecting:  [0,1,1,2,1,2]");
   console.log("=>", countBits(5));
-
-  console.log("");
-
-  console.log("Expecting: 1");
-  console.log("=>", countBits([1]));
 }
 
 module.exports = countBits;
