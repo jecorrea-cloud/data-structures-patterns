@@ -35,6 +35,13 @@ function countBits(n) {
   for (let index = 0; index <= n; index++) {
     bits.push(Number(index).toString(2).replace(/0/g, "").length);
   }
+
+  // Or:
+
+  //   for (let index = 0; index <= n; index++) {
+  //     bits.push(index.toString(2).split("0").length-1);
+  //   }
+
   return bits;
 }
 
