@@ -22,7 +22,13 @@
 
 // Follow up: If this function is called many times, how would you optimize it?
 
-function reverseBits(n) {}
+function reverseBits(n) {
+  let ans = 0;
+  for (let index = 0; index <= 32; index++) {
+    const element = array[index];
+  }
+  return ans;
+}
 
 if (require.main === module) {
   // add your own tests in here
