@@ -13,7 +13,15 @@
 
 // -1000 <= a, b <= 1000
 
-function getSum(a, b) {}
+function getSum(a, b) {
+  // O(1) time | O(1) space
+  while (b !== 0) {
+    let temp = (a & b) << 1;
+    a = a ^ b;
+    b = temp;
+  }
+  return a;
+}
 
 if (require.main === module) {
   // add your own tests in here
