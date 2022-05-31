@@ -14,3 +14,13 @@
 // Output: ["we", "say", ":", "yes"]
 // Explanation:
 // One possible encode method is: "we:;say:;:::;yes"
+
+function encode(strs) {
+  let res = "";
+  for (const s of strs) {
+    res += s.length + "#" + s;
+  }
+  return res;
+}
+
+function decode(str) {}
