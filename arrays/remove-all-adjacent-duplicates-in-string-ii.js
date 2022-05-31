@@ -22,7 +22,13 @@
 // Input: s = "pbbcggttciiippooaais", k = 2
 // Output: "ps"
 
-function removeDuplicates(s, k) {}
+function removeDuplicates(s, k) {
+  let stack = [];
+  let strArr = [...s];
+  for (const iterator of strArr) {
+    console.log(iterator);
+  }
+}
 
 if (require.main === module) {
   // add your own tests in here
