@@ -19,12 +19,12 @@ function longestPalindrome(s) {
   let res = "";
   let resLen = 0;
 
-  for (const i of s) {
+  for (let i = 0; i < array.length; i++) {
     // Odd length
     let l = i;
     let r = i;
 
-    while ((l >= 0) & (r < s.length) & (l[i] === r[i])) {
+    while (l >= 0 && r < s.length && l[i] === r[i]) {
       if (r - l + 1 > resLen) {
         res = s.substring(l, r + 1);
         resLen = r - l + 1;
@@ -35,7 +35,7 @@ function longestPalindrome(s) {
     // Even length
     l = i;
     r = i + 1;
-    while ((l >= 0) & (r < s.length) & (l[i] === r[i])) {
+    while (l >= 0 && r < s.length && l[i] === r[i]) {
       if (r - l + 1 > resLen) {
         res = s.substring(l, r + 1);
         resLen = r - l + 1;
@@ -44,5 +44,6 @@ function longestPalindrome(s) {
       r += 1;
     }
   }
+
   return res;
 }
