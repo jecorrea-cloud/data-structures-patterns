@@ -23,4 +23,7 @@ function encode(strs) {
   return res;
 }
 
-function decode(str) {}
+function decode(str) {
+  let res = [];
+  let i = 0;
+}
