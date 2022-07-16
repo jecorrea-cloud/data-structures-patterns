@@ -21,9 +21,9 @@ function longestPalindrome(s) {
 
   for (let index = 0; index < s.length; index++) {
     // Odd length
-    let l,
-      r = index,
-      index;
+    let l = index;
+    let r = index;
+
     while ((l > 0) & (r < s.length) & (l[index] === r[index])) {
       if (r - l + 1 > resLen) {
         res = s.substring(l, r + 1);
@@ -33,5 +33,16 @@ function longestPalindrome(s) {
       }
     }
     // Even length
+    l = index;
+    r = index + 1;
+    while ((l > 0) & (r < s.length) & (l[index] === r[index])) {
+      if (r - l + 1 > resLen) {
+        res = s.substring(l, r + 1);
+        resLen = r - l + 1;
+        l -= 1;
+        r += 1;
+      }
+    }
+    return res;
   }
 }
