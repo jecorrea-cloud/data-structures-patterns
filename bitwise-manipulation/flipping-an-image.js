@@ -40,7 +40,7 @@ function flipAndInvertImage(image) {
     }
 
     // Swapping:
-    for (let j = 0; j < array.length; j++) {
+    for (let j = 0; j < image.length; j++) {
       image[index][j] = image[index][j] === 1 ? 0 : 1;
     }
   }
