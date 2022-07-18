@@ -28,6 +28,7 @@
 // images[i][j] is either 0 or 1.
 
 function flipAndInvertImage(image) {
+  // O(n) time - where n is the length of the array | O(1) space
   for (let index = 0; index < image.length; index++) {
     let left = 0;
     let right = image[index].length - 1;
