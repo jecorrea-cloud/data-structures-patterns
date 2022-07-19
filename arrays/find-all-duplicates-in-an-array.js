@@ -22,4 +22,14 @@
 // 1 <= nums[i] <= n
 // Each element in nums appears once or twice.
 
-function findDuplicates(nums) {}
+function findDuplicates(nums) {
+  let outputArr = [];
+  for (let i = 0; i < nums.length; i++) {
+    let index = Math.abs(nums[i]) - 1;
+    if (nums[index] < 0) {
+      outputArr.push(index + 1);
+    }
+    nums[index] = -nums[index];
+  }
+  return outputArr;
+}
