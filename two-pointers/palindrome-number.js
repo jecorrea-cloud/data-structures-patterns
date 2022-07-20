@@ -26,21 +26,45 @@
 
 // Follow up: Could you solve it without converting the integer to a string?
 
-// Two pointers approach:
+// String approach:
+
+// function isPalindrome(x) {
+//   if (x < 0) {
+//     return false;
+//   }
+//   x = x.toString();
+//   let left = 0;
+//   let right = x.length - 1;
+//   while (left < right) {
+//     if (x[left] !== x[right]) {
+//       return false;
+//     }
+//     left++;
+//     right--;
+//   }
+//   return true;
+// }
+
+// Approach without a string:
 
 function isPalindrome(x) {
   if (x < 0) {
     return false;
   }
-  x = x.toString();
-  let left = 0;
-  let right = x.length - 1;
-  while (left < right) {
-    if (x[left] !== x[right]) {
+  let div = 1;
+  while (x >= 10 * div) {
+    div *= 10;
+  }
+
+  while (x) {
+    let left = Math.floor(x / div);
+    let right = x % 10;
+
+    if (left !== right) {
       return false;
     }
-    left++;
-    right--;
+    x = Math.floor((x % div) / 10);
+    div = div / 100;
   }
   return true;
 }
