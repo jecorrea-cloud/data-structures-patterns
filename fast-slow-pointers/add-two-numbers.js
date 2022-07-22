@@ -19,3 +19,38 @@
 // The number of nodes in each linked list is in the range [1, 100].
 // 0 <= Node.val <= 9
 // It is guaranteed that the list represents a number that does not have leading zeros.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function addTwoNumbers(l1, l2) {
+  // This variable will store a dummy node whose .next
+  // attribute will point to the head of our new LL.
+  const newLinkedListHeadPointer = new LinkedList(0);
+  let currentNode = newLinkedListHeadPointer;
+  let carry = 0;
+
+  let nodeOne = l1;
+  let nodeTwo = l2;
+  while (nodeOne !== null || nodeTwo !== null) {
+    const valueOne = nodeOne !== null ? nodeOne.value : 0;
+    const valueTwo = nodeTwo !== null ? nodeTwo.value : 0;
+
+    // New digit
+    const sumOfValues = valueOne + valueTwo + carry;
+    const newValue = sumOfValues % 10;
+    const newNode = newLinkedList(newValue);
+
+    // Update pointers
+    currentNode.next = newNode;
+    currentNode = newNode;
+
+    carry = Math.floor(sumOfValues / 10);
+    nodeOne = nodeOne !== null ? nodeOne.next : null;
+    nodeTwo = nodeTwo !== null ? nodeTwo.next : null;
+  }
+  return newLinkedListHeadPointer.next;
+}
