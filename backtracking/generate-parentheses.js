@@ -13,4 +13,30 @@
 
 // 1 <= n <= 8
 
-function generateParentheses(n) {}
+function generateParentheses(n) {
+  let stack = [];
+  let res = [];
+
+  function backTracking(openN, closedN) {
+    if ((openN === closedN) === n) {
+      res.append("".join(stack));
+      return;
+    }
+
+    if (openN < n) {
+      stack.append("(");
+      backTracking(openN + 1, closedN);
+      stack.pop();
+    }
+
+    if (closeN < openN) {
+      stack.append(")");
+      backTracking(openN, closedN + 1);
+      stack.pop();
+    }
+  }
+
+  backTracking(0, 0);
+
+  return res;
+}
