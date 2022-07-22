@@ -30,4 +30,19 @@
 
 function numIslands(grid) {
   if (!grid) return 0;
+  let rows = grid.length;
+  let cols = grid[0].length;
+  let islands = 0;
+  const visited = new Set();
+
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (grid[i][j] && !visited.has(i, j)) {
+        bfs(i, j);
+        islands += 1;
+      }
+    }
+  }
+
+  return islands;
 }
