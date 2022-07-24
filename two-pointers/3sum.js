@@ -33,25 +33,37 @@ function threeSum(nums) {
   // O(n^2) time | O(n) space - where n is the length of the array
   // Sort the input array and declare the returning array. Set it to empty.
   nums.sort((a, b) => a - b);
-  const triplets = [];
+  let triplets = [];
 
   for (let index = 0; index < nums.length; index++) {
+
+    if (nums[index] > 0) return triplets;
+    if (nums[index] === nums[index - 1]) continue;
+
     let left = index + 1;
     let right = nums.length - 1;
+    let sum = 0
+
     // Now iterate
     while (left < right) {
-      // Declare the sum
-      const sum = nums[index] + nums[left] + nums[right];
+      // Initialize the sum
+      sum = nums[index] + nums[left] + nums[right];
       // Conditional to check if the three numbers sum matches the target sum (zero)
       // If it does, push the triplets as an array to the returning array and move
       // the pointers one space to the right and left
       if (
-        sum === 0 &&
-        !triplets.includes([nums[index], nums[left]], nums[right])
+        sum === 0
       ) {
         triplets.push([nums[index], nums[left], nums[right]]);
         left++;
         right--;
+        while (nums[left] == nums[left - 1]) {
+          left++;
+      }
+
+      while (nums[right] == nums[right + 1]) {
+          right--;
+      }
       }
       // If the sum is less than the target sum, move the left pointer one space to the right
       else if (sum < 0) {
