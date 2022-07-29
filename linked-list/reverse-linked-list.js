@@ -20,4 +20,15 @@
 
 // Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
 
-function reverseList(head) {}
+// Iterative approach:
+
+function reverseList(head) {
+  let prev = null;
+  while (head) {
+    let next = head.next;
+    head.next = prev;
+    prev = head;
+    head = next;
+  }
+  return prev;
+}
