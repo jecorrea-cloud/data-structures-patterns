@@ -33,7 +33,7 @@ function topKFrequent(nums, k) {
   // Populate the bucket with numbers in frequency
   // as the index of the bucket
   for (const key in map) {
-    bucket[map[key]].push[key];
+    bucket[map[key]].push(key);
   }
 
   // Finally add the most frequent elements to the result array, starting from the end
