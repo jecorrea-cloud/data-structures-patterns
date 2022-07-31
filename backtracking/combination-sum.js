@@ -27,3 +27,16 @@
 // 1 <= candidates[i] <= 200
 // All elements of candidates are distinct.
 // 1 <= target <= 500
+
+// Backtracking approach:
+
+function combinationSum(candidates, target) {
+  candidates.sort((a, b) => a - b);
+  const combos = [];
+  const combo = [];
+  const set = new Set(candidates);
+  dfs(target);
+  return combos;
+
+  function dfs(target, start = 0) {}
+}
