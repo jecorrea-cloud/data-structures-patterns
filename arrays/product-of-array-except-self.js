@@ -15,8 +15,28 @@
 
 // Constraints:
 
-// 2 <= nums.length <= 105
+// 2 <= nums.length <= 10^5
 // -30 <= nums[i] <= 30
 // The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 
 // Follow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)
+
+function productExceptSelf(nums) {
+  const res = [];
+
+  // First pass from beginning to end
+  let prefix = 1;
+  for (let index = 0; index < nums.length; index++) {
+    res[index] = prefix;
+    prefix *= nums[index];
+  }
+
+  // Second pass from end to beginning
+  let postfix = 1;
+  for (let index = nums.length - 1; index >= 0; index--) {
+    res[index] *= postfix;
+    postfix *= nums[index];
+  }
+  // Return the result array
+  return res;
+}
