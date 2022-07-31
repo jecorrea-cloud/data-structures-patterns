@@ -23,7 +23,17 @@ function encode(strs) {
   return res;
 }
 
-function decode(str) {
+function decode(s) {
   let res = [];
   let i = 0;
+
+  while (i < s.length) {
+    j = i;
+    while (s[j] !== "#") {
+      ++j;
+    }
+    const len = Number(s.slice(i, j));
+    res.push(s.slice(++j, j + len));
+    i = j + len;
+  }
 }
