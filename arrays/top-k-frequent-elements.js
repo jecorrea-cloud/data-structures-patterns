@@ -17,7 +17,35 @@
 
 // Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 
-function topKFrequent(nums, k) {}
+// Bucket sort approach:
+
+function topKFrequent(nums, k) {
+  // Declare the variables
+  let map = {};
+  let res = [];
+  let bucket = Array.from({ length: nums.length + 1 }, () => []); // to create unique arrays
+
+  // storing frequencies for each number in the map hashtable
+  for (const i of nums) {
+    map[i] = i in map ? 1 + map[i] : 1;
+  }
+
+  // Populate the bucket with numbers in frequency
+  // as the index of the bucket
+  for (const key in map) {
+    bucket[map[key]].push[key];
+  }
+
+  // Finally add the most frequent elements to the result array, starting from the end
+  for (let index = bucket.length - 1; index >= 0; index--) {
+    if (bucket[index].length > 0) {
+      bucket[i].forEach((elem) => res.push(elem));
+      if (k === res.length) {
+        return res;
+      }
+    }
+  }
+}
 
 if (require.main === module) {
   // add your own tests in here

@@ -18,4 +18,12 @@
 // 1 <= n <= 20
 // -1000 <= matrix[i][j] <= 1000
 
-function rotate(matrix) {}
+function rotate(matrix) {
+  left = 0;
+  right = matrix.length - 1;
+  while (left < right) {
+    for (let index = 0; index < array.length; index++) {
+      const element = array[index];
+    }
+  }
+}
