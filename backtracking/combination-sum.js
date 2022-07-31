@@ -38,5 +38,22 @@ function combinationSum(candidates, target) {
   dfs(target);
   return combos;
 
-  function dfs(target, start = 0) {}
+  function dfs(target, start = 0) {
+    if (set.has(target)) {
+      combo.push(target);
+      combos.push(combo.slice());
+      combo.pop();
+    }
+    const mid = Math.floor(target / 2);
+    for (
+      let index = start;
+      index < candidates.length && candidates[i] <= mid;
+      ++index
+    ) {
+      const candidate = candidates[index];
+      combo.push(candidate);
+      dfs(target - candidate, 1);
+      combo.pop();
+    }
+  }
 }
