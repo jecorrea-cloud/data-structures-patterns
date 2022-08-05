@@ -27,3 +27,19 @@
 // pos is -1 or a valid index in the linked-list.
 
 // Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+// Hashet approach:
+
+function hasCycle(head) {
+  // O(n) time | O(n) space - Where n is the length of the list
+  let setValues = new Set();
+  while (head) {
+    if (setValues.has(head)) {
+      return true;
+    } else {
+      setValues.add(head);
+      head = head.next;
+    }
+  }
+  return false;
+}
