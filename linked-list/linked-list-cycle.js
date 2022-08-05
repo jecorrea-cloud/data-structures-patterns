@@ -43,3 +43,20 @@ function hasCycle(head) {
   }
   return false;
 }
+
+// Fast/Slow pointers approach:
+
+function hasCycle(head) {
+  // O(n) time - Where n is the length of the list | O(1) space
+  let slow = head;
+  let fast = head;
+
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) {
+      return true;
+    }
+  }
+  return false;
+}
