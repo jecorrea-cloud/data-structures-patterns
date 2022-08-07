@@ -35,6 +35,7 @@ function mergeTwoLists(list1, list2) {
       prev.next = list1;
       list1 = list1.next;
     }
+    prev = prev.next;
   }
   // this line is required if there are residual values from either lists:
   prev.next = list1 || list2;
