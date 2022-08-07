@@ -31,4 +31,22 @@
 // -10^4 <= Node.val <= 10^4
 // Node.random is null or is pointing to some node in the linked list.
 
-function copyRandomList(head) {}
+function copyRandomList(head) {
+  let map = new Map();
+
+  let ptr = head;
+  // First pass to copy the nodes
+  while (ptr) {
+    map.set(ptr, new Node(ptr.val, null, null));
+    ptr = ptr.next;
+  }
+
+  // Second pass to copy the pointers
+  for (const [oldPtr, newPtr] of map) {
+    newPtr.next = oldPtr.next && map.get(oldPtr.next);
+    newPtr.random = oldPtr.random && map.get(oldPtr.next);
+  }
+
+  // Return the new copied list
+  return map.get(head);
+}
