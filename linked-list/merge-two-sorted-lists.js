@@ -23,4 +23,21 @@
 // -100 <= Node.val <= 100
 // Both list1 and list2 are sorted in non-decreasing order.
 
-function mergeTwoLists(list1, list2) {}
+function mergeTwoLists(list1, list2) {
+  let nullNode = { val: 0, next: null };
+  let prev = nullNode;
+
+  while (list1 && list2) {
+    if (list1.val >= list2.val) {
+      prev.next = list2;
+      list2 = list2.next;
+    } else {
+      prev.next = list1;
+      list1 = list1.next;
+    }
+  }
+  // this line is required if there are residual values from either lists:
+  prev.next = list1 || list2;
+
+  return nullNode.next;
+}
