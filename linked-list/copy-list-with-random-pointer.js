@@ -44,7 +44,7 @@ function copyRandomList(head) {
   // Second pass to copy the pointers
   for (const [oldPtr, newPtr] of map) {
     newPtr.next = oldPtr.next && map.get(oldPtr.next);
-    newPtr.random = oldPtr.random && map.get(oldPtr.next);
+    newPtr.random = oldPtr.random && map.get(oldPtr.random);
   }
 
   // Return the new copied list
