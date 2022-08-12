@@ -20,4 +20,25 @@
 // 0 <= digits.length <= 4
 // digits[i] is a digit in the range ['2', '9'].
 
-function letterCombination(digits) {}
+function letterCombination(digits) {
+  let res = [];
+  const digitToChar = {
+    2: "abc",
+    3: "def",
+    4: "ghi",
+    5: "jkl",
+    6: "mno",
+    7: "qprs",
+    8: "tuv",
+    9: "wxyz",
+  };
+
+  function backTrack(i, currStr) {
+    digitToChar;
+  }
+
+  if (digits) {
+    backTrack(0, "");
+  }
+  return res;
+}
