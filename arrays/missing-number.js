@@ -25,6 +25,18 @@
 
 // Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
 
+// Aprroach w XOR operator
+
+function missingNumber(nums) {
+  let res = nums.length;
+
+  for (let i = 0; i < nums.length; i++) {
+    res = res ^ i ^ nums[i];
+  }
+  return res;
+}
+
+// Approach w sum
 function missingNumber(nums) {
   let res = nums.length;
   for (let index = 0; index < nums.length; index++) {
