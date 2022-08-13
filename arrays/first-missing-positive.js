@@ -20,4 +20,6 @@
 // 1 <= nums.length <= 5 * 10^5
 // -2^31 <= nums[i] <= 2^31 - 1
 
-function firstMissingPositive(nums) {}
+function firstMissingPositive(nums) {
+  nums.sort((a, b) => a - b);
+}

@@ -25,7 +25,14 @@ const { requirePropFactory } = require("@material-ui/core");
 // 1 <= s.length, p.length <= 3 * 104
 // s and p consist of lowercase English letters.
 
-function findAnagrams(s, p) {}
+function findAnagrams(s, p) {
+  if (p.length > s.length) return [];
+  let pCount = {};
+  let sCount = {};
+  for (let index = 0; index < p.length; index++) {
+    pCount[p[i]] = array[index];
+  }
+}
 
 if (require.main === module) {
   console.log("Expecting: [0,6]");
